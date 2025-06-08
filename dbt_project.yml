@@ -17,5 +17,12 @@ clean-targets:
 
 models:
   evergreen_demo:
-    example:
-      +materialized: view
+    staging:
+      +enabled: true
+      +materialized: table
+      +schema: stg_evergreen_demo
+
+    warehouse:
+      +enabled: true
+      +materialized: table
+      +schema: dwh_evergreen_demo    
